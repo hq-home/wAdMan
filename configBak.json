@@ -1,0 +1,51 @@
+﻿{
+    platformSelected: 1,
+    platforms: [
+        {
+            name: "WoW Classic",
+            path: "d:\\kkkk\\eeee\\eee"
+        },
+        {
+            name: "WoW Classic 2",
+            path: "d:\\kkkk\\eeee\\eee1"
+        }
+    ],
+
+    addonDefaults: {
+        projectUrl: "https://wow.curseforge.com/projects",
+        curseUrl: "https://www.curseforge.com/wow/addons",
+        reLive: {
+            base: "//*[@id='content']/section/div/div/div/table/tbody/tr[contains(@class,'project-file-list-item')]/td[contains(@class,'project-file-release-type')]/div[contains(@class,'release-phase')][1]/../..",
+            path: '{base}td[.project-file-name]/div/div/a[@data-action="file-link"]',
+            url: "{path}@href",
+            versionName: "{path}@data-name",
+            targetVersion: "{base}td[.project-file-game-version]/span@text()"
+        },
+        reAlpha: {
+                base: '//*[@id="content"]/section/div/div/div/ul/li[.file-tag]/div/div[.beta-phase]###parentNode',
+                path:  '//*[@id="content"]/section/div/div/div/ul/li[.file-tag]/div/div/a[@data-action="file-link"]',
+                versionName: '{path}@data-name',
+                url: '{path}@href'
+        },
+        reBeta: {
+                base: '//*[@id="content"]/section/div/div/div/ul/li[.file-tag]/div/div[.alpha-phase]###parentNode',
+                path: '//*[@id="content"]/section/div/div/div/ul/li[.file-tag]/div/div/a[@data-action="file-link"]',
+                versionName: '{path}@data-name',
+                url: '{path}@href'
+        }
+    },
+    addons: [
+        [
+            {
+                name: "Kaliel's Tracker",
+                relUrl: "kaliels-tracker"
+            }
+        ],
+        [
+            {
+                name: "Kaliel's Tracker",
+                relUrl: "kaliels-tracker"
+            }
+        ]
+    ]
+}
